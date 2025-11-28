@@ -14,6 +14,12 @@ spring:
                   - Path=/projects/**
                   filters:
                   - RewritePath=/projects/(?<lien>.*), /${lien}
+                - id : MSTache
+                  uri: lb://MSTache
+                  predicates:
+                  - Path=/tache/**
+                  filters:
+                  - RewritePath=/tache/(?<lien>.*), /${lien}                
 management:
     endpoints:
         web:
